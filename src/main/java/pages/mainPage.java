@@ -8,12 +8,12 @@ public class mainPage extends basePage {
         driver.get("https://musical-douhua-c546d9.netlify.app");
     }
 
-    public By nameOfYourWebElement = By.id("your id");
-
+    /** Приклад ініціалізації веб-елементу */
     public WebElement getYourWebElement() {
-        return driver.findElement(nameOfYourWebElement);
+        return driver.findElement(By.id("your id"));
     }
 
+    /** Приклад ініціалізації веб-елементу, використовуючи змінну в xpath */
     public WebElement getWebElementWithXPath(String addedValue) {
         String xpath = String.format("//yourXpath and your "+ addedValue +"");
         return driver.findElement(By.xpath(xpath));

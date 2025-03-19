@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="MyTestSuite" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="org.testng.reporters.JUnitXMLReporter"/>
+    </listeners>
+    <test name="mainPageTestsBuild">
+        <classes>
+            <class name="mainPageTests" />
+        </classes>
+    </test>
+</suite>

@@ -4,6 +4,6 @@ public class mainPageTests extends baseTest{
 
     @Test
     public void t_01_test(){
-
+        mainPage.getYourWebElement().click();
     }
 }

@@ -9,6 +9,7 @@ public class basePage {
 
     protected static WebDriver driver;
 
+    /** Ініціалізація Chrome Web driver */
     public basePage() {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
