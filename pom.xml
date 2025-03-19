@@ -38,6 +38,11 @@
       <artifactId>slf4j-simple</artifactId>
       <version>2.0.7</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpmime</artifactId>
+      <version>4.5.14</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -46,7 +51,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0</version>
         <configuration>
-          <!-- Генерація xml звітів -->
           <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
           <systemPropertyVariables>
             <listener>org.testng.reporters.JUnitXMLReporter</listener>
