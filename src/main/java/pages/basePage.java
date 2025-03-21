@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.time.Duration;
+
 public class basePage {
 
     protected static WebDriver driver;
@@ -21,5 +23,10 @@ public class basePage {
 
     public WebDriver getDriver() {
         return driver;
+    }
+
+    /** Метод для задавання пауз та очікувань в проекті */
+    public void wait(int seconds){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
 }
