@@ -5,9 +5,8 @@ import org.openqa.selenium.WebElement;
 
 public class mainPage extends basePage {
 
-    /** Приклад ініціалізації драйверу та веб-сторінки */
+    /** Приклад ініціалізації веб-сторінки */
     public mainPage() {
-        driver.get("http://www.vdata.de/home/index.jsp");
         wait(5);
     }
 

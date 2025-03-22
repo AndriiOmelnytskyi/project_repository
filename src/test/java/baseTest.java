@@ -1,6 +1,4 @@
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 import pages.mainPage;
 
 public class baseTest {
