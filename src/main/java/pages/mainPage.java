@@ -10,15 +10,20 @@ public class mainPage extends basePage {
         wait(5);
     }
 
-    /** Приклад ініціалізації веб-елементу */
-    public WebElement getYourWebElement() {
-        return driver.findElement(By.id("your id"));
+    public WebElement getTextOnPage(String text){
+        return driver.findElement(By.xpath("//div[@class = 'container'][contains(., '" + text + "')]"));
     }
 
-    /** Приклад ініціалізації веб-елементу, використовуючи змінну в xpath */
-    public WebElement getWebElementWithXPath(String addedValue) {
-        String xpath = String.format("//yourXpath and your "+ addedValue +"");
-        return driver.findElement(By.xpath(xpath));
+    public WebElement getCardByName(String nameOfCard) {
+        return driver.findElement(By.xpath("//div[@class = 'facts-item'][contains(.,'" + nameOfCard + "')]"));
+    }
+
+    public WebElement getLinksInFooter(String nameOfTitle){
+        return driver.findElement(By.xpath("//div[@class = 'col-sm-5 col-lg-4']//a[contains(., '" + nameOfTitle + "')]"));
+    }
+
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
     }
 
 }
