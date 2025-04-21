@@ -3,6 +3,19 @@
     <listeners>
         <listener class-name="org.testng.reporters.JUnitXMLReporter"/>
     </listeners>
+
+    <test name="aboutPageTestsBuild">
+        <classes>
+            <class name="aboutPageTests" />
+        </classes>
+    </test>
+
+    <test name="mainPageEnglishTestsBuild">
+        <classes>
+            <class name="mainPageEnglishTests" />
+        </classes>
+    </test>
+
     <test name="mainPageTestsBuild">
         <classes>
             <class name="mainPageTests" />

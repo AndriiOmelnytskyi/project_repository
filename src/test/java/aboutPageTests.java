@@ -6,6 +6,8 @@ public class aboutPageTests extends baseTest{
     @Test
     public void t_01_checkMainText(){
         /* Перехід до сторінки */
+        mainPage.wait(10);
+        mainPage.getDriver().get("https://ad.nure.ua/");
         mainPage.getMenuItemById("menu-item-52").click();
         mainPage.wait(10);
         Assert.assertEquals(aboutPage.getCurrentUrl(), "https://ad.nure.ua/pro-nas");

@@ -7,6 +7,8 @@ public class mainPageTests extends baseTest{
      * Перевірка видимості пунктів меню */
     @Test
     public void t_01_CheckVisibilityOfIcons(){
+        mainPage.wait(10);
+        mainPage.getDriver().get("https://ad.nure.ua/");
         /* Перевірка видимості карток */
         Assert.assertTrue(mainPage.getCardByName("Мiнiстерство освiти i науки України").isDisplayed());
         Assert.assertTrue(mainPage.getCardByName("Наукова бібліотека").isDisplayed());
@@ -33,6 +35,8 @@ public class mainPageTests extends baseTest{
     /** Тест перевіряє правильність текстів на головній сторінці додатку */
     @Test
     public void t_02_checkTexts(){
+        mainPage.wait(10);
+        mainPage.getDriver().get("https://ad.nure.ua/");
         /* Перевірка основних текстів */
         Assert.assertTrue(mainPage.getTextOnPage("© Кафедра автоматизації проектування обчислювальної техніки, 2001 - 2025.").isDisplayed());
         Assert.assertTrue(mainPage.getTextOnPage("Кафедра автоматизації проектування обчислювальної техніки").isDisplayed());

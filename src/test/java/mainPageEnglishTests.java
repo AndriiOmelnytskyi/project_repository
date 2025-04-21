@@ -7,6 +7,8 @@ public class mainPageEnglishTests extends baseTest {
     @Test
     public void t_01_checkTranslationInMenus(){
         /* Переклад сторінки на англійську */
+        mainPage.getDriver().get("https://ad.nure.ua/");
+        mainPage.wait(10);
         mainPage.getEnButton().click();
         mainPage.wait(10);
         Assert.assertEquals(mainPage.getCurrentUrl(), "https://ad.nure.ua/en/");
@@ -37,6 +39,8 @@ public class mainPageEnglishTests extends baseTest {
     @Test
     public void t_02_checkEnglishTexts(){
         /* Переклад сторінки на англійську */
+        mainPage.wait(10);
+        mainPage.getDriver().get("https://ad.nure.ua/");
         mainPage.getEnButton().click();
         mainPage.wait(10);
         Assert.assertEquals(mainPage.getCurrentUrl(), "https://ad.nure.ua/en/");
