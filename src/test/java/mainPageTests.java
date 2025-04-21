@@ -10,7 +10,7 @@ public class mainPageTests extends baseTest{
         mainPage.wait(10);
         mainPage.getDriver().get("https://ad.nure.ua/");
         /* Перевірка видимості карток */
-        Assert.assertTrue(mainPage.getCardByName("Мiнiстерство освiти i науки України negative case").isDisplayed());
+        Assert.assertTrue(mainPage.getCardByName("Мiнiстерство освiти i науки України").isDisplayed());
         Assert.assertTrue(mainPage.getCardByName("Наукова бібліотека").isDisplayed());
         Assert.assertTrue(mainPage.getCardByName("Розклад занять").isDisplayed());
         Assert.assertTrue(mainPage.getCardByName("Дистанційна освіта").isDisplayed());
