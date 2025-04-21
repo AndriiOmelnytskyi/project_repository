@@ -14,6 +14,10 @@ public class mainPage extends basePage {
         return driver.findElement(By.xpath("//ul[@id = 'main-menu'][contains(., '" + menuName + "')]"));
     }
 
+    public WebElement getMenuItemById(String id){
+        return driver.findElement(By.xpath("//ul[@id = 'main-menu']//li[@id = '" + id + "']"));
+    }
+
     public WebElement getTextOnPage(String text){
         return driver.findElement(By.xpath("//div[@class = 'container'][contains(., '" + text + "')]"));
     }
