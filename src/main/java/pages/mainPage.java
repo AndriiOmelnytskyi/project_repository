@@ -25,6 +25,10 @@ public class mainPage extends basePage {
     public WebElement getLinkInPartnerBlock(String link){
         return driver.findElement(By.xpath("//div[@class = 'row']//a[@href = '" + link + "']"));
     }
+
+    public WebElement getEnButton(){
+        return driver.findElement(By.xpath("//ul[@class = 'header-languages']//a[contains(., 'en')]"));
+    }
     public String getCurrentUrl(){
         return driver.getCurrentUrl();
     }
