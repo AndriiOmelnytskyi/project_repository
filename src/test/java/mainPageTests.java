@@ -3,54 +3,73 @@ import org.testng.annotations.Test;
 
 public class mainPageTests extends baseTest{
 
-    /** Тест перевіряє видимість карток на головній сторінці сайту
-     * Перевірка вмісту карток, їх даних та тексту */
+    /** Тест перевіряє видимість карток з зовнішніми посиланнями на головній сторінці сайту
+     * Перевірка видимості пунктів меню */
     @Test
     public void t_01_CheckVisibilityOfIcons(){
         /* Перевірка видимості карток */
-        Assert.assertTrue(mainPage.getCardByName("Hauptsitz").isDisplayed());
-        Assert.assertTrue(mainPage.getCardByName("Geschäftsführung").isDisplayed());
-        Assert.assertTrue(mainPage.getCardByName("Kundengruppen").isDisplayed());
-        Assert.assertTrue(mainPage.getCardByName("Mitarbeiter").isDisplayed());
-        Assert.assertTrue(mainPage.getCardByName("Gründungsjahr").isDisplayed());
+        Assert.assertTrue(mainPage.getCardByName("Мiнiстерство освiти i науки України").isDisplayed());
+        Assert.assertTrue(mainPage.getCardByName("Наукова бібліотека").isDisplayed());
+        Assert.assertTrue(mainPage.getCardByName("Розклад занять").isDisplayed());
+        Assert.assertTrue(mainPage.getCardByName("Дистанційна освіта").isDisplayed());
+        Assert.assertTrue(mainPage.getCardByName("Офіційний сайт ХНУРЕ").isDisplayed());
 
-        /* Перевірка тексту карток */
-        Assert.assertEquals(mainPage.getCardByName("Hauptsitz").getText(), "Hauptsitz\n" +
-                "Leopoldstraße 244, 80807 München");
-        Assert.assertEquals(mainPage.getCardByName("Geschäftsführung").getText(), "Geschäftsführung\n" +
-                "Stefan Huber\n" +
-                "Martin Werner");
-        Assert.assertEquals(mainPage.getCardByName("Kundengruppen").getText(), "Kundengruppen\n" +
-                "Banken, Versicherungsgesellschaften,\n" +
-                "Öffentlich-Rechtliche Versorgungsträger,\n" +
-                "Finanzdienstleister und Vertriebe");
-        Assert.assertEquals(mainPage.getCardByName("Mitarbeiter").getText(), "Mitarbeiter\n" +
-                "110");
-        Assert.assertEquals(mainPage.getCardByName("Gründungsjahr").getText(), "Gründungsjahr\n" +
-                "1996");
+        /* Перевірка видимості іконок меню */
+        Assert.assertTrue(mainPage.getMenuItems("Головна").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Про нас").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Співробітники").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Новини").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Партнери").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Випускники").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Медіа").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Вакансії").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Контакти").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Дипломування").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Абітурієнту").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Наука").isDisplayed());
+        Assert.assertTrue(mainPage.getMenuItems("Студенту").isDisplayed());
     }
 
     /** Тест перевіряє правильність текстів на головній сторінці додатку */
     @Test
     public void t_02_checkTexts(){
-        Assert.assertTrue(mainPage.getTextOnPage("VData Software Entwicklung GmbH").isDisplayed());
-        Assert.assertTrue(mainPage.getTextOnPage("Das Softwarehaus rund um die Vorsorge").isDisplayed());
-        Assert.assertTrue(mainPage.getTextOnPage("Die VData Software-Entwicklung GmbH und ihre Tochtergesellschaften sind auf die Entwicklung, Implementierung\n" +
-                "\t\t\t\tund Vermarktung von komplexen Anwendungs- und Verwaltungssystemen mit dem Fokus gesetzliche und betriebliche\n" +
-                "\t\t\t\tAltersversorgungssysteme für den deutschen und osteuropäischen Markt spezialisiert.").isDisplayed());
+        /* Перевірка основних текстів */
+        Assert.assertTrue(mainPage.getTextOnPage("© Кафедра автоматизації проектування обчислювальної техніки, 2001 - 2025.").isDisplayed());
+        Assert.assertTrue(mainPage.getTextOnPage("Кафедра автоматизації проектування обчислювальної техніки").isDisplayed());
+        Assert.assertTrue(mainPage.getTextOnPage("Новини").isDisplayed());
+        Assert.assertTrue(mainPage.getTextOnPage("Партнери").isDisplayed());
+        Assert.assertTrue(mainPage.getTextOnPage("Розробка сайту — Rubika").isDisplayed());
     }
 
     /** Тест перевіряє видимість і правильність посилань */
     @Test
     public void t_03_checkLinks(){
-        /* Перевірка посилання Impressum */
-        mainPage.getLinksInFooter("Impressum").click();
-        mainPage.wait(5);
-        Assert.assertEquals(mainPage.getCurrentUrl(), "http://www.vdata.de/home/impressum.jsp");
+        String originalWindow = mainPage.getDriver().getWindowHandle();
 
-        /* Перевірка посилання Datenschutz */
-        mainPage.getLinksInFooter("Datenschutz").click();
-        mainPage.wait(5);
-        Assert.assertEquals(mainPage.getCurrentUrl(), "http://www.vdata.de/home/datenschutz.jsp");
+        /* Перевірка наявності посилань на сайти партнерів на головній сторінці додатку */
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://www.nixsolutions.com/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://www.globallogic.com/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://www.gameloft.com/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://www.infostroy.com/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://sigma.software/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("http://workat.dnt-lab.com/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://first.institute/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://cloudwharf.com/").isEnabled());
+        Assert.assertTrue(mainPage.getLinkInPartnerBlock("https://www.aldec.com/en").isEnabled());
+
+        /* Перевірка можливості переходу на сайт парнетра кліком на лого партнера */
+        mainPage.getLinkInPartnerBlock("https://www.nixsolutions.com/").click();
+        mainPage.wait(10);
+
+        /* Перехід на нове вікно*/
+        for (String windowHandle : mainPage.getDriver().getWindowHandles()) {
+            if (!windowHandle.equals(originalWindow)) {
+                mainPage.getDriver().switchTo().window(windowHandle);
+                break;
+            }
+        }
+
+        /* Перевірка посилання*/
+        Assert.assertEquals(mainPage.getCurrentUrl(), "https://www.nixsolutions.com/");
     }
 }

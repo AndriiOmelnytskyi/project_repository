@@ -18,7 +18,7 @@ public class basePage {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
-            driver.get("http://www.vdata.de/home/index.jsp");
+            driver.get("https://ad.nure.ua");
         }
     }
 
