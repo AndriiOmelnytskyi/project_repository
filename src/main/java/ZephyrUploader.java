@@ -14,9 +14,9 @@ public class ZephyrUploader {
     public static void main(String[] args) {
 
         /* Для використання даного класу слід додати Token ZephyrScale та Ключ вашого проекту в Jira */
-        String TokenOfYourZephyrScaleAPI = "TokenOfYourZephyrScaleAPI";
+        String TokenOfYourZephyrScaleAPI = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb250ZXh0Ijp7ImJhc2VVcmwiOiJodHRwczovL2FuZHJpaW9tZWxueXRza3lpLTE3NDI2NTEwMzc4MjAuYXRsYXNzaWFuLm5ldCIsInVzZXIiOnsiYWNjb3VudElkIjoiNzEyMDIwOjA0MjZhYTMwLTRkMmYtNGYwMy04ZjIyLWE0NTVlMTY2MjNmMiIsInRva2VuSWQiOiJmN2Y5YWZlNC1jNWU4LTQ1YmYtOGU3OC0xMTAzNDJjYWU0MTYifX0sImlzcyI6ImNvbS5rYW5vYWgudGVzdC1tYW5hZ2VyIiwic3ViIjoiYjMzODY2NjQtNjk2Zi0zNzM1LWE3MjQtOGRlNWM2YmYyYWIxIiwiZXhwIjoxNzc2Nzg0MTg5LCJpYXQiOjE3NDUyNDgxODl9.uHSkA7tzqmm6FZDwMhurzyqsxJEc-cr47J6agO-H7cE";
         File reportFile = new File("test-output/MyTestSuite/mainPageTestsBuild.xml");
-        String keyOfYourProject = "keyOfYourProject";
+        String keyOfYourProject = "MBA";
 
         /* URL Zephyr Scale */
         String zephyrApiUrl = "https://api.zephyrscale.smartbear.com/v2/automations/executions/junit";

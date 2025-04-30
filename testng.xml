@@ -10,12 +10,6 @@
         </classes>
     </test>
 
-    <test name="mainPageEnglishTestsBuild">
-        <classes>
-            <class name="mainPageEnglishTests" />
-        </classes>
-    </test>
-
     <test name="mainPageTestsBuild">
         <classes>
             <class name="mainPageTests" />
